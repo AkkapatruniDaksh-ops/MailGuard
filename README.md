@@ -1,53 +1,88 @@
-# MailGuard — Email Spam & Phishing Detection
+🛡️ MailGuard — Email Spam & Phishing Detection System
 
-## Project Overview
+MailGuard is a Python-based cybersecurity project that analyzes email content to identify suspicious patterns and classify potentially unwanted messages using machine learning and rule-based detection.
 
-MailGuard is a Python-based cybersecurity project that analyzes email content for suspicious patterns and classifies messages using a machine-learning spam detector.
+It provides an interactive Streamlit dashboard for email analysis, making it easier to inspect suspicious messages and understand potential email threats.
 
-## Features
+🚀 Key Features
 
-- Rule-based suspicious phrase detection
-- Machine-learning spam classification
-- Email subject and body analysis
-- Plain-text email file (.eml) parsing
-- URL extraction and basic warning indicators
-- Streamlit web dashboard
-- Session history and CSV export
+Machine Learning Detection: Classifies emails using a trained spam detection model.
+Rule-Based Analysis: Identifies suspicious phrases and patterns in email content.
+Subject & Body Analysis: Examines both the subject and message body.
+Email File Parsing: Supports plain-text ".eml" email files.
+URL Extraction: Extracts links from emails and provides basic warning indicators.
+Interactive Dashboard: Provides a user-friendly Streamlit interface.
+Session History: Keeps track of analyses during the session.
+CSV Export: Allows analysis history to be exported for further review.
+🧰 Technologies Used
 
-## Technologies
+Technology| Purpose Python| Core programming language Streamlit| Interactive web dashboard Scikit-learn| Machine learning classification Pandas| Data processing joblib| Saving and loading the trained model
 
-- Python
-- Streamlit
-- Scikit-learn
-- Pandas
-- joblib
+📁 Project Structure
 
-## Project Structure
+MailGuard/ │ ├── app.py ├── detector.py ├── train_model.py ├── requirements.txt │ ├── data/ │ └── emails.csv │ ├── model/ │ └── saved model files │ └── reports/
 
-- app.py — Web dashboard
-- detector.py — Email analysis functions
-- train_model.py — Model training and evaluation
-- data/emails.csv — Labeled training data
-- model/ — Saved trained classifier
-- reports/ — Intended location for generated reports
-- requirements.txt — Python dependencies
+⚙️ Installation & Setup
 
-## Setup
+Clone the repository
+git clone https://github.com/AkkapatruniDaksh-ops/MailGuard.git cd MailGuard
 
-1. Create a Python virtual environment.
-2. Install the dependencies using:
+Create a virtual environment
+python -m venv .venv
 
-   python -m pip install -r requirements.txt
+Activate the environment
+Windows PowerShell:
 
-3. Prepare data/emails.csv with text and label columns.
-4. Train the classifier:
+..venv\Scripts\Activate.ps1
 
-   python train_model.py
+Install dependencies
+python -m pip install -r requirements.txt
 
-5. Launch the dashboard:
+Prepare the dataset
+Ensure "data/emails.csv" contains the required "text" and "label" columns.
 
-   python -m streamlit run app.py
+Train the model
+python train_model.py
 
-## Limitations
+Run MailGuard
+python -m streamlit run app.py
 
-This is an educational prototype. Spam classification does not guarantee phishing detection. The current rule checks are heuristic and cannot prove that an email is malicious or safe. Model performance depends on the quality and size of its training dataset.
+The application will open in your browser.
+
+🔍 How It Works
+
+The user provides email text or uploads a supported ".eml" file.
+MailGuard extracts the email content.
+Rule-based checks inspect suspicious phrases and patterns.
+The machine learning model classifies the email.
+Extracted URLs and warning indicators are presented.
+The analysis can be reviewed in session history and exported as CSV.
+🎯 Project Objective
+
+The objective of MailGuard is to demonstrate how machine learning and rule-based techniques can be combined to support email security analysis and phishing awareness.
+
+⚠️ Limitations
+
+MailGuard is an educational cybersecurity prototype.
+Spam classification does not guarantee phishing detection.
+Rule-based checks are heuristic and may produce false positives or false negatives.
+Detection performance depends on the quality and size of the training dataset.
+A suspicious or safe classification should not be treated as definitive proof.
+👨‍💻 Author
+
+Daksh Akkapatruni
+
+GitHub: "AkkapatruniDaksh-ops" (https://github.com/AkkapatruniDaksh-ops)
+
+⭐ If you find this project interesting, consider starring the repository!
+
+## 📸 Application Screenshots
+
+### Main Dashboard
+![MailGuard Dashboard](screenshots/dashboard.png)
+
+### Email Detection Result
+![Detection Result](screenshots/detection-result.png)
+
+### Email Analysis
+![Email Analysis](screenshots/email-analysis.png)
